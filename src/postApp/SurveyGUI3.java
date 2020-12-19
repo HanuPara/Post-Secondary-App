@@ -171,7 +171,8 @@ public class SurveyGUI3 extends JFrame implements ActionListener{
 			panelUpdate(true);
 			if (! checkEmptyInfo()) { // Calls validation method to check if all information entered is valid
 				new SurveyCalculations();
-				new MainGUI();
+				new SearchGUI(SurveyCalculations.getRecommendation());
+				//new MainGUI();
 				frame.setVisible(false);
 
 			}
