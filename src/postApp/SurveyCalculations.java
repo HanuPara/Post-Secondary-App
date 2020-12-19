@@ -3,15 +3,15 @@ package postApp;
 public class SurveyCalculations {
 	
 	private String[] programs = new String[15];// The list of programs
-	
+	// Initialize
 	public SurveyCalculations() {
 		Initialize.isSurveyCompleted = true;
 		createProgramArray();
 		calculateProgram();
 	}
-	
+	//create the program array
 	private void createProgramArray() {
-		programs[0] = "Mechanical Engineering/Mechatronics";
+		programs[0] = "Mechanical Engineering";
 		programs[1] = "Nanotechnology Engineering";
 		programs[2] = "Computer Engineering";
 		programs[3] = "Electrical Engineering";
@@ -21,19 +21,19 @@ public class SurveyCalculations {
 		programs[7] = "Chemical Engineering";
 		programs[8] = "Civil Engineering";
 		programs[9] = "Aerospace Engineering";
-		programs[10] = "Geological Engineering/Mining Engineering";
+		programs[10] = "Geological Engineering";
 		programs[11] = "Environmental Engineering";
 		programs[12] = "Manufacturing Engineering";
-		programs[13] = "Architectural Engineering/Management";
+		programs[13] = "Architectural Engineering";
 		programs[14] = "Undeclared Engineering";
 
 	}
-
+	//calculate the program
 	private int calculateProgram() {
 
-		final int HIGHEST = 5;
-		int max = 0;
-		int index = 0;
+		final int HIGHEST = 5;//highest answer
+		int max = 0;//number of times 5 is chosen
+		int index = 0;//index where 5 is chosen
 
 		for (int i = 0; i <15; i++) {
 
@@ -42,7 +42,7 @@ public class SurveyCalculations {
 				++max;
 			}
 			if(max>1) {
-				index = 14;
+				index = 14;//returns undeclared if 5 is chosen multiple times
 				break;
 			}
 		}
