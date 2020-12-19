@@ -11,7 +11,7 @@ public class SurveyCalculations {
 	}
 	
 	private void createProgramArray() {
-		programs[0] = "Mechanical Engineering/Mechatronics";
+		programs[0] = "Mechanical Engineering";
 		programs[1] = "Nanotechnology Engineering";
 		programs[2] = "Computer Engineering";
 		programs[3] = "Electrical Engineering";
@@ -21,10 +21,10 @@ public class SurveyCalculations {
 		programs[7] = "Chemical Engineering";
 		programs[8] = "Civil Engineering";
 		programs[9] = "Aerospace Engineering";
-		programs[10] = "Geological Engineering/Mining Engineering";
+		programs[10] = "Mining Engineering";
 		programs[11] = "Environmental Engineering";
 		programs[12] = "Manufacturing Engineering";
-		programs[13] = "Architectural Engineering/Management";
+		programs[13] = "Architectural Engineering";
 		programs[14] = "Undeclared Engineering";
 
 	}
