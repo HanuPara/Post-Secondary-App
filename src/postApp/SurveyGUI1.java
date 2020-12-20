@@ -7,7 +7,7 @@ import java.awt.event.*;
 import java.util.Arrays;
 
 public class SurveyGUI1 extends JFrame implements ActionListener{
-	
+	//Create the fields
 	private JFrame frame;
 	private JPanel screen;
 	private JLabel surveyScreen;
@@ -28,7 +28,7 @@ public class SurveyGUI1 extends JFrame implements ActionListener{
 		frameSetup();
 		panelDesign();
 	}
-	
+	//Setup the JFrame
 	private void frameSetup() {
 		frame = new JFrame();
 		screen = new JPanel();
@@ -108,7 +108,7 @@ public class SurveyGUI1 extends JFrame implements ActionListener{
 		
 		frame.repaint();
 	}
-	
+	//Update the JPanel after changes 
 	private void panelUpdate(boolean flag) {
 		
 		//show selected buttons
@@ -162,10 +162,10 @@ public class SurveyGUI1 extends JFrame implements ActionListener{
 	
 	// ActionPerformed - when user clicks any button
 	public void actionPerformed(ActionEvent event) {
-		if (event.getSource() == backButton) { // If user clicked loginButton
-			new MainGUI(); // Create new login screen (redirect back to login)
+		if (event.getSource() == backButton) { // If user clicked backButton
+			new MainGUI(); // Create new MainGUI
 			Arrays.fill(Initialize.surveyAnswers, -1); //resets answers
-			frame.setVisible(false); // Make current screen (signup) invisible
+			frame.setVisible(false); // Make current screen invisible
 			
 		} 
 		else if (event.getSource() == continueButton) { // if user clicked continueButton
