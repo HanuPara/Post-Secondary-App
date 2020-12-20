@@ -7,12 +7,12 @@ import java.awt.event.*;
 import java.util.Arrays;
 
 public class SurveyGUI2 extends JFrame implements ActionListener{
-	
+	//Create the fields
 	private JFrame frame;
 	private JPanel screen;
 	private JLabel surveyScreen;
 	
-	private final int CONSTANT=5;
+	private final int CONSTANT=5;//The value of the previous question 
 	
 	private int colourCodes[][]= {{232,17,35},{247,99,12},{255,185,0},{73,130,5},{16,124,16}};
 
@@ -27,7 +27,7 @@ public class SurveyGUI2 extends JFrame implements ActionListener{
 		frameSetup();
 		panelDesign();
 	}
-	
+	//setup the JFrame
 	private void frameSetup() {
 		frame = new JFrame();
 		screen = new JPanel();
@@ -107,7 +107,7 @@ public class SurveyGUI2 extends JFrame implements ActionListener{
 		
 		frame.repaint();
 	}
-	
+	//Update the panel after changes 
 	private void panelUpdate(boolean flag) {
 		
 		//show selected buttons
@@ -160,9 +160,9 @@ public class SurveyGUI2 extends JFrame implements ActionListener{
 	
 	// ActionPerformed - when user clicks any button
 	public void actionPerformed(ActionEvent event) {
-		if (event.getSource() == backButton) { // If user clicked loginButton
-			new SurveyGUI1(); // Create new login screen (redirect back to login)
-			frame.setVisible(false); // Make current screen (signup) invisible
+		if (event.getSource() == backButton) { // If user clicked SurveyGUI2
+			new SurveyGUI1(); // Create new SurveyGUI (redirect back to SurveyGUI1)
+			frame.setVisible(false); // Make current screen invisible
 			
 		} 
 		else if (event.getSource() == continueButton) { // if user clicked continueButton
