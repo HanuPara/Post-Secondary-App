@@ -7,10 +7,10 @@ import java.awt.event.*;
 import java.util.Arrays;
 
 public class SurveyGUI1 extends JFrame implements ActionListener{
-	
+	//Create the fields
 	private JFrame frame;
 	private JPanel screen;
-	private JLabel surveyScreen;
+	private JLabel surveyScreen;//creates the background
 	
 	public static JButton[][] answerButtons = new JButton[15][5];	
 	private int colourCodes[][]= {{232,17,35},{247,99,12},{255,185,0},{73,130,5},{16,124,16}};
@@ -24,11 +24,10 @@ public class SurveyGUI1 extends JFrame implements ActionListener{
 	 */
 	public SurveyGUI1() {
 		
-	
 		frameSetup();
 		panelDesign();
 	}
-	
+	//Setup the JFrame
 	private void frameSetup() {
 		frame = new JFrame();
 		screen = new JPanel();
@@ -108,7 +107,7 @@ public class SurveyGUI1 extends JFrame implements ActionListener{
 		
 		frame.repaint();
 	}
-	
+	//Updates the components after a change has been made
 	private void panelUpdate(boolean flag) {
 		
 		//show selected buttons
@@ -149,7 +148,7 @@ public class SurveyGUI1 extends JFrame implements ActionListener{
 		boolean anyEmpty = false;
 		
 		for(int i =0;i<5;i++) {
-			if (Initialize.surveyAnswers[i]==-1)
+			if (Initialize.surveyAnswers[i]==-1)//Checks for empty fields
 				anyEmpty = true;
 		}
 		
@@ -162,8 +161,8 @@ public class SurveyGUI1 extends JFrame implements ActionListener{
 	
 	// ActionPerformed - when user clicks any button
 	public void actionPerformed(ActionEvent event) {
-		if (event.getSource() == backButton) { // If user clicked loginButton
-			new MainGUI(); // Create new login screen (redirect back to login)
+		if (event.getSource() == backButton) { // If user clicked backButton
+			new MainGUI(); // Create new main screen (redirect back to main hub)
 			Arrays.fill(Initialize.surveyAnswers, -1); //resets answers
 			frame.setVisible(false); // Make current screen (signup) invisible
 			
