@@ -6,12 +6,12 @@ public class SurveyCalculations {
 	
 	public SurveyCalculations() {
 		Initialize.isSurveyCompleted = true;
-		createProgramArray();
-		calculateProgram();
+		createProgramArray();//Set the answers to the questions
+		calculateProgram();//Find the matching program
 	}
-	
+	//Each program corresponds to the answers of the questions
 	private void createProgramArray() {
-		programs[0] = "Mechanical Engineering/Mechatronics";
+		programs[0] = "Mechanical Engineering";
 		programs[1] = "Nanotechnology Engineering";
 		programs[2] = "Computer Engineering";
 		programs[3] = "Electrical Engineering";
@@ -21,19 +21,19 @@ public class SurveyCalculations {
 		programs[7] = "Chemical Engineering";
 		programs[8] = "Civil Engineering";
 		programs[9] = "Aerospace Engineering";
-		programs[10] = "Geological Engineering/Mining Engineering";
+		programs[10] = "Mining Engineering";
 		programs[11] = "Environmental Engineering";
 		programs[12] = "Manufacturing Engineering";
 		programs[13] = "Architectural Engineering/Management";
-		programs[14] = "Undeclared Engineering";
+		programs[14] = "Undeclared Engineering";//Undeclared is chosen if 5 is chosen more than once because the questions are specific to programs
 
 	}
 
 	private int calculateProgram() {
 
-		final int HIGHEST = 5;
-		int max = 0;
-		int index = 0;
+		final int HIGHEST = 5;//The highest answer
+		int max = 0;// the number of times 5 is chosen
+		int index = 0;//the index where five is chosen
 
 		for (int i = 0; i <15; i++) {
 
@@ -50,7 +50,7 @@ public class SurveyCalculations {
 		return index;
 
 	}
-	
+	//returns the program recommended to the user
 	public String getRecommendation() {
 		return programs[calculateProgram()];
 	}
